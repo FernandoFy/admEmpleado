@@ -1,0 +1,41 @@
+<div class="top-bar">
+    <div class="top-bar-left">
+      <ul class="dropdown menu" data-dropdown-menu>
+        {% if user.is_authenticated %}
+        <li>
+          <a href="{% url 'persona_app:inicio' %}">Inicio</a>
+        </li>
+        <li>
+          <a href="{% url 'persona_app:empleados_all' %}">Empleados</a>
+        </li>
+        <li>
+          <a href="{% url 'departamento_app:departamento_list' %}">Departamentos</a>
+        </li>
+        <li>
+          <a href="{% url 'persona_app:empleados_admin' %}">Administrar empleados</a>
+        </li>
+        <li>
+          <a href="{% url 'departamento_app:nuevo_departamento' %}">Nuevo departamento</a>
+        </li>  
+        <li>
+          <a href="{% url 'persona_app:empleado_add' %}">Registrar empleado</a>
+        </li>
+      </ul>
+    </div>
+    <div class="top-bar-right">
+      <ul class="menu">
+        <li>
+          <a href="{% url 'logout' %}"><i class="bi bi-box-arrow-in-left"></i></a>
+        </li>
+      </ul>
+    </div>
+        {% else %}
+    <div class="top-bar-right"></div>
+      <ul class="menu">
+        <li>
+          <a href="{% url 'login' %}"><i class="bi bi-person"></i></a>
+        </li>
+      </ul>
+    </div>
+        {% endif %}
+  </div>
